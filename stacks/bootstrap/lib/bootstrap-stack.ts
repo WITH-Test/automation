@@ -10,7 +10,7 @@ export class BootstrapStack extends Stack {
      * Create an Identity provider for GitHub inside your AWS Account. This
      * allows GitHub to present itself to AWS IAM and assume a role.
      */
-    const provider = new OpenIdConnectProvider(this, 'MyProvider', {
+    const provider = new OpenIdConnectProvider(this, 'GitHub Actions', {
       url: 'https://token.actions.githubusercontent.com',
       clientIds: ['sts.amazonaws.com'],
     })

@@ -44,15 +44,15 @@ jobs:
         run: yarn install
 
       - name: Synth stack
-        run: yarn --cwd packages/infrastructure cdk synth
+        run: cd stacks/infrastructure && cdk synth && cd -
 
       - name: Check synth values and fail the job
         run: |
           set -e
 
-          cat ${{inputs.CDK_CONFIG_FILE}}
+          cat cdk.out/*
 
           exit 1
 
       - name: Deploy stack
-        run: yarn --cwd packages/infrastructure cdk deploy --require-approval never
+        run: cd stacks/infrastructure && cdk deploy --require-approval never && cd -

@@ -6,8 +6,6 @@ This type of thing needs often to be configured once per account, to reduce cost
 
 ## Architecture
 
-![](diagram.png)
-
 ## Responsibilities
 
 - Deploy infrastructure via the AWS CDK.

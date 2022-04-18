@@ -1,27 +1,34 @@
 {
-  "name": "microteams",
-  "description": "",
-  "version": "1.0.0",
-  "author": "simon",
+  "name": "infrastructure",
+  "version": "0.1.0",
+  "bin": {
+    "infrastructure": "bin/infrastructure.js"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@aws-cdk/core": "^1.152.0",
+    "constructs": "^10.0.0",
+    "js-yaml": "^4.1.0",
+    "jsonschema": "^1.4.0",
+    "source-map-support": "^0.5.16"
+  },
   "devDependencies": {
-    "lerna": "4.0.0",
-    "syncpack": "5.8.15"
+    "@aws-cdk/aws-ec2": "^1.152.0",
+    "@aws-cdk/aws-ecs": "^1.152.0",
+    "@aws-cdk/aws-ecs-patterns": "^1.152.0",
+    "@types/jest": "^26.0.10",
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^10.17.27",
+    "aws-cdk-lib": "^2.20.0",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
   },
-  "keywords": [],
-  "license": "ISC",
-  "private": "true",
   "scripts": {
-    "fmt": "syncpack format fix-mismatches",
-    "l": "lerna run --stream",
-    "prepare": "husky install"
-  },
-  "workspaces": {
-    "nohoist": [
-      "**/*"
-    ],
-    "packages": [
-      "packages/*",
-      "packages/services/*"
-    ]
+    "build": "tsc",
+    "cdk": "cdk",
+    "test": "jest",
+    "watch": "tsc -w"
   }
 }

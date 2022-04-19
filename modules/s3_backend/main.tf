@@ -13,6 +13,9 @@ provider "aws" {
 
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "dogeops-terraform-state"
+  lifecycle {
+    prevent_destroy = true
+  }
 }
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "terraform_state" {

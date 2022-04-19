@@ -1,8 +1,17 @@
 # Automate setup tasks
 
-## AWS
+## Prerequisites
 
-### Bootstrap
+Configure AWS cli and export some env vars.
 
-Creates the necessary components to use the AWS CDK.
-Requires credentials with permissions to create and modify resources on the account.
+If AWS configured with `profile`:
+
+```shell
+export AWS_PROFILE=<PROFILE_NAME>
+```
+
+Otherwise:
+```shell
+export AWS_ACCESS_KEY=<KEY>
+export AWS_SECRET_ACCESS_KEY=<SECRET>
+```

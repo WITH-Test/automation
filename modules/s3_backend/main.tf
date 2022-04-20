@@ -1,7 +1,3 @@
-# Configure the AWS Provider
-provider "aws" {
-  region = var.aws_region
-}
 
 # ------------------------------------------------------------------------------
 # CREATE THE S3 BUCKET

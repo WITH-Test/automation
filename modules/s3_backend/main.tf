@@ -1,6 +1,3 @@
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# CREATE AN S3 BUCKET AND DYNAMODB TABLE TO USE AS A TERRAFORM BACKEND
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Configure the AWS Provider
 provider "aws" {
   region = var.aws_region
@@ -9,8 +6,6 @@ provider "aws" {
 # ------------------------------------------------------------------------------
 # CREATE THE S3 BUCKET
 # ------------------------------------------------------------------------------
-
-
 resource "aws_s3_bucket" "terraform_state" {
   bucket = "${var.organization}-${var.bucket_prefix}-terraform-state"
   lifecycle {
@@ -35,6 +30,7 @@ resource "aws_s3_bucket_acl" "terraform_state" {
 
 resource "aws_s3_bucket_versioning" "terraform_state" {
   bucket = aws_s3_bucket.terraform_state.id
+
   versioning_configuration {
     status = "Enabled"
   }

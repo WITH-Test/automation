@@ -3,9 +3,9 @@ output "s3_bucket_arn" {
   description = "The ARN of the S3 bucket"
 }
 
-output "bucket_endpoint" {
-  description = "Bucket endpoint"
-  value       = aws_s3_bucket.terraform_state.website_endpoint
+output "bucket_name" {
+  description = "Bucket"
+  value       = aws_s3_bucket.terraform_state.bucket
 }
 
 output "dynamodb_table_name" {

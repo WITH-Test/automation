@@ -5,7 +5,7 @@ data "aws_caller_identity" "current" {}
 resource "aws_ecs_task_definition" "definition" {
   family                   = "task_definition_name"
   task_role_arn            = aws_iam_role.ecs_task_role.name
-  execution_role_arn       = aws_iam_role.ecs_task_execution_role
+  execution_role_arn       = aws_iam_role.ecs_task_execution_role.arn
   network_mode             = "awsvpc"
   cpu                      = var.cpu_units
   memory                   = var.memory

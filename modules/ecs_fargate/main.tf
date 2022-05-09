@@ -7,8 +7,8 @@ resource "aws_ecs_task_definition" "definition" {
   task_role_arn            = aws_iam_role.ecs_task_role.name
   execution_role_arn       = aws_iam_role.ecs_task_execution_role
   network_mode             = "awsvpc"
-  cpu                      = var.cpu_units
-  memory                   = var.ram_mb
+  cpu                      = "256"
+  memory                   = "512"
   requires_compatibilities = ["FARGATE"]
 
   container_definitions = <<DEFINITION

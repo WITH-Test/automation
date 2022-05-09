@@ -13,3 +13,8 @@ variable "organization" {
   type        = string
   description = "Organization name"
 }
+
+variable "environment" {
+  type = string
+  description = "AWS environment (options: feature, develop, staging, prod)"
+}

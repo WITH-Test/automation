@@ -17,10 +17,23 @@ variable "project" {
 variable "repository" {
   type        = string
   description = "ECR repository name"
+  default     = var.project
 }
 
 variable "image_tag" {
   type        = string
   description = "Image tag"
   default     = "latest"
+}
+
+variable "cpu_units" {
+  type        = string
+  description = "Number of CPU units"
+  default     = "256"
+}
+
+variable "ram_mb" {
+  type        = string
+  description = "MB of RAM"
+  default     = "512"
 }

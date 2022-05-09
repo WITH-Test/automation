@@ -24,3 +24,15 @@ variable "image_tag" {
   description = "Image tag"
   default     = "latest"
 }
+
+variable "cpu_units" {
+  type = string
+  description = "CPU Units"
+  default = "256"
+}
+
+variable "memory" {
+  type = string
+  description = "RAM memory"
+  default = "512"
+}
